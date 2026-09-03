@@ -1,0 +1,1 @@
+export function StatusBadge({onGround}:{onGround:boolean}){return <span className={`mono rounded-full border px-2 py-1 text-[10px] tracking-wider ${onGround?'border-amber-400/25 bg-amber-400/10 text-amber-300':'border-cyan/25 bg-cyan/10 text-ice'}`}>{onGround?'EM SOLO':'EM VOO'}</span>}

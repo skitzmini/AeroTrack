@@ -1,0 +1,1 @@
+export function LiveIndicator({demo=false}:{demo?:boolean}){return <span className="mono inline-flex items-center gap-2 text-[11px] font-semibold tracking-[.18em] text-ice"><span className="live-dot h-2 w-2 rounded-full bg-cyan" aria-hidden="true"/>{demo?'DADOS DEMO':'AO VIVO'}</span>}

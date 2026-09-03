@@ -1,0 +1,2 @@
+import {TriangleAlert} from 'lucide-react';import {Button} from './ui/Button';
+export function ErrorState({message,onRetry}:{message:string;onRetry?:()=>void}){return <div className="grid min-h-48 place-items-center p-6 text-center"><div><TriangleAlert className="mx-auto mb-3 text-amber-300"/><h3 className="font-semibold">Dados de voo temporariamente indisponíveis</h3><p className="mt-2 text-sm text-slate-400">{message}</p>{onRetry&&<Button className="mt-4" variant="secondary" onClick={onRetry}>Tentar novamente</Button>}</div></div>}

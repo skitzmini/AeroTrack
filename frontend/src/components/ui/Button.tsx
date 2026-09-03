@@ -1,0 +1,3 @@
+import type {ButtonHTMLAttributes,ReactNode} from 'react';import {twMerge} from 'tailwind-merge';
+type Props=ButtonHTMLAttributes<HTMLButtonElement>&{children:ReactNode;variant?:'primary'|'secondary'|'ghost'};
+export function Button({children,className='',variant='primary',...props}:Props){const styles={primary:'bg-cyan text-ink hover:bg-ice',secondary:'border border-slate-700 bg-slate-900/60 hover:border-cyan/50',ghost:'hover:bg-white/5 text-slate-300'};return <button className={twMerge('focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold transition disabled:opacity-50',styles[variant],className)} {...props}>{children}</button>}
