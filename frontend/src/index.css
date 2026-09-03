@@ -1,3 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @tailwind base;@tailwind components;@tailwind utilities;
 :root{font-family:Inter,sans-serif;color:#f8fafc;background:#020817;font-synthesis:none;color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;min-height:100vh;background:#020817}button,input{font:inherit}button{cursor:pointer}::selection{background:#00cfff33;color:#fff}.mono{font-family:'JetBrains Mono',monospace}.glass{background:rgba(7,17,31,.78);border:1px solid rgba(148,163,184,.14);backdrop-filter:blur(18px)}.grid-bg{background-image:linear-gradient(rgba(0,207,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,207,255,.035) 1px,transparent 1px);background-size:44px 44px}.focus-ring:focus-visible{outline:2px solid #67e8f9;outline-offset:3px}@keyframes pulse-live{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(0,207,255,.4)}50%{opacity:.65;box-shadow:0 0 0 5px transparent}}.live-dot{animation:pulse-live 2s infinite}.maplibregl-popup-content{background:#07111f!important;color:#f8fafc!important;border:1px solid #1e3a50;border-radius:10px!important}.maplibregl-popup-tip{border-top-color:#07111f!important}
+
+@keyframes nav-enter{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes section-enter{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes panel-enter{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes flight-drift{0%,100%{transform:translate3d(0,-3px,0) rotate(22deg)}50%{transform:translate3d(-12px,7px,0) rotate(18deg)}}
+@keyframes radar-breathe{0%,100%{opacity:.45;transform:scale(.98)}50%{opacity:1;transform:scale(1.02)}}
+header{animation:nav-enter .45s ease-out both}
+main>section{animation:section-enter .65s ease-out both}
+main>section:nth-child(2){animation-delay:.08s}
+main>section:nth-child(3){animation-delay:.16s}
+aside.glass{animation:panel-enter .28s ease-out both}
+.flight-drift{animation:flight-drift 5s ease-in-out infinite}
+.radar-breathe{animation:radar-breathe 3.5s ease-in-out infinite}
+.glass{transition:border-color .2s ease,background-color .2s ease,box-shadow .2s ease,transform .2s ease}
+@media (hover:hover){.glass:hover{box-shadow:0 14px 38px rgba(0,0,0,.16)}}
+@media (max-width:767px){aside.glass{animation-name:section-enter}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
